@@ -4,6 +4,9 @@
   "description": "Dad Jokes site front end for experimenting with React and GraphQL.",
   "main": "index.js",
   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "test": "test"
   },
   "author": "nJim",
