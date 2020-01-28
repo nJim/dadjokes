@@ -1,5 +1,8 @@
 # Dependency directories
 node_modules/
 
+# Build files
+.next/
+
 # Annoying
 .DS_Store
