@@ -1,0 +1,5 @@
+# Dependency directories
+node_modules/
+
+# Annoying
+.DS_Store
