@@ -1,0 +1,11 @@
+{
+  "name": "dadjokes-backend",
+  "version": "1.0.0",
+  "description": "Dad Jokes site backend for experimenting with GraphQL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "nJim",
+  "license": "ISC"
+}

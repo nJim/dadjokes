@@ -1,0 +1,6 @@
+type Joke {
+  id: ID! @id
+  content: String!
+  updatedAt: DateTime! @updatedAt
+  createdAt: DateTime! @createdAt
+}
