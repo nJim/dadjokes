@@ -1,6 +1,7 @@
 import Cards from '../components/03-organisms/Cards';
 
 function AboutPage() {
+  const heading = 'Frontend tooling used on this project';
   // TODO: Add shape to this data in component.
   const cards = [
     {
@@ -32,7 +33,10 @@ function AboutPage() {
   return (
     <div>
       <div>This is the about page.</div>
-      <Cards cards={cards}/>
+      <Cards 
+        heading={heading}
+        cards={cards}
+      />
     </div>
   );
 }
