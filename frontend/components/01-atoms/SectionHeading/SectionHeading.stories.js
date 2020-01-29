@@ -1,10 +1,12 @@
 import React from 'react';
-import SectionHeading from './';
+import SectionHeading from '.';
 
 export default {
   title: 'Section Heading',
 };
 
 export const heading = () => (
-  <SectionHeading>This is a section</SectionHeading>
+  <SectionHeading>
+    What you gon' do with all that junk?
+  </SectionHeading>
 );
