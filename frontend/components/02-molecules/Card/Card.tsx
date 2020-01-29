@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card as AntCard } from 'antd';
+import CardData from '../../../types';
 
 const { Meta } = AntCard;
 
-const Card = ({title, description}) => {
+const Card = ({title, description}: CardData) => {
   const defaultImageAlt = "To Do"
   const defaultImageSrc = "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
   return (
