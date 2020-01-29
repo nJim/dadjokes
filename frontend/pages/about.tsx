@@ -32,7 +32,7 @@ function AboutPage() {
     {
       id: 'typescript',
       title: 'TypeScript',
-      description: 'details'
+      description: 'A typed superset of JavaScript. I\'m using the strong static typing features to ensure code is easier to understand and debug.'
     },
     {
       id: 'jest',
