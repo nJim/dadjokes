@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '.';
 
 export default {
-  title: 'Navigation',
+  title: 'Organisms|Navigation',
 };
 
 export const navigation = () => (

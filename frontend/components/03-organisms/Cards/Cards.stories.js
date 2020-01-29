@@ -2,7 +2,7 @@ import React from 'react';
 import Cards from '.';
 
 export default {
-  title: 'Cards',
+  title: 'Organisms|Cards',
 };
 
 const cardData = [

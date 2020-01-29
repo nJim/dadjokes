@@ -2,7 +2,7 @@ import React from 'react';
 import SectionHeading from '.';
 
 export default {
-  title: 'Section Heading',
+  title: 'Atoms|Section Heading',
 };
 
 export const heading = () => (
