@@ -4,12 +4,16 @@
   "description": "Dad Jokes site backend for experimenting with GraphQL.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "playground": "graphql plyground",
+    "deploy": "prisma deploy"
   },
   "author": "nJim",
   "license": "ISC",
   "dependencies": {
     "graphql": "^14.6.0",
-    "graphql-cli": "^3.0.14"
+    "graphql-cli": "^3.0.14",
+    "prisma": "^1.34.10",
+    "prisma-binding": "^2.3.16"
   }
 }
