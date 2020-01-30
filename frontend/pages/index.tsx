@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import {useQuery} from '@apollo/react-hooks';
 import gql from 'graphql-tag';
+import Joke from '../components/02-molecules/Joke';
 
 const ALL_JOKES_QUERY = gql`
   query ALL_JOKES_QUERY {
@@ -11,12 +12,6 @@ const ALL_JOKES_QUERY = gql`
   }
 `;
 
-interface Data {
-  jokes: {
-    joke: Array<{ id: string; content: string }>;
-  };
-};
-
 const JokeList = () => {
   const { loading, error, data } = useQuery(ALL_JOKES_QUERY);
   if (loading) return 'Loading...';
@@ -24,7 +19,7 @@ const JokeList = () => {
 
   return (
     data.jokes.map((joke: { id: string; content: string; }) => (
-      <p key={joke.id}>{joke.content}</p>
+      <Joke id={joke.id} content={joke.content} />
     ))
   );
 
