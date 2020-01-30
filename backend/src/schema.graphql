@@ -1,0 +1,9 @@
+# import * from './generated/prisma.graphql'
+
+type Mutation {
+  createJoke(content: String!): Joke!
+}
+
+type Query {
+  jokes: [Joke]!
+}
