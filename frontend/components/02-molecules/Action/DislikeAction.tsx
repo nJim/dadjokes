@@ -14,7 +14,7 @@ const DislikeAction = () => {
       <Tooltip title="Dislike">
         <DislikeIcon active={active} />
       </Tooltip>
-      <span style={{ paddingLeft: 8, cursor: 'auto' }}>{counter}</span>
+      <span style={{ paddingLeft: 5, cursor: 'auto' }}>{counter}</span>
     </span>
   );
 }
