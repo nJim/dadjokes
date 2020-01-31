@@ -1,31 +1,41 @@
 import react, {Component, ChangeEvent} from 'react';
+import {Form, Input, Button} from 'antd';
 import {Mutation} from 'react-apollo';
 import gql from 'graphql-tag';
+
+const {Item} = Form;
+const {TextArea} = Input;
 
 class AddJokeForm extends Component {
   state = {
     content: ''
   }
-  handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const {name, value} = e.target;
     this.setState({[name]: value});
   }
   render() {
     return (
-      <form>
-        <label htmlFor="content">
-          Submit a joke
-          <input 
-            type="text" 
+      <Form>
+        <Item 
+          label="Submit a joke" 
+          htmlFor="content"
+          colon={false}
+        >
+          <TextArea 
             id="content" 
             name="content"
             placeholder="Insert Hahas" 
             required
             value={this.state.content}
             onChange={this.handleChange}
+            autoSize={{minRows: 2}}
           />
-        </label>
-      </form>
+        </Item>
+        <Button type="primary">
+          Submit
+        </Button>
+      </Form>
     );
   }
 }
