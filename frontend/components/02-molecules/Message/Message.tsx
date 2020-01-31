@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component, ReactNode} from 'react';
 import {Alert} from 'antd';
 
 type Props = {
-  message: String,
+  message: String | ReactNode,
   type: "success" | "info" | "warning" | "error" | undefined
 }
 
