@@ -1,43 +1,54 @@
-import react, {Component, ChangeEvent} from 'react';
+import react, {useState, ChangeEvent} from 'react';
 import {Form, Input, Button} from 'antd';
-import {Mutation} from 'react-apollo';
+import {useMutation} from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 const {Item} = Form;
 const {TextArea} = Input;
 
-class AddJokeForm extends Component {
-  state = {
-    content: ''
+const CREATE_JOKE_MUTATION = gql`
+  mutation CREATE_JOKE_MUTATION($content: String!) {
+    createJoke(content: $content) {
+      id
+    }
   }
-  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+`;
+
+const AddJokeForm = () => {
+  const [form, setState] = useState({content: ''});
+
+  const [addJoke, { data }] = useMutation(CREATE_JOKE_MUTATION);
+
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const {name, value} = e.target;
-    this.setState({[name]: value});
+    setState({...form, [name]: value});
   }
-  render() {
-    return (
-      <Form>
-        <Item 
-          label="Submit a joke" 
-          htmlFor="content"
-          colon={false}
-        >
-          <TextArea 
-            id="content" 
-            name="content"
-            placeholder="Insert Hahas" 
-            required
-            value={this.state.content}
-            onChange={this.handleChange}
-            autoSize={{minRows: 2}}
-          />
-        </Item>
-        <Button type="primary">
-          Submit
-        </Button>
-      </Form>
-    );
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    addJoke({ variables: { content: form.content } });
   }
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Item 
+        label="Submit a joke" 
+        htmlFor="content"
+        colon={false}
+      >
+        <TextArea 
+          id="content" 
+          name="content"
+          placeholder="Insert Hahas" 
+          required
+          value={form.content}
+          onChange={handleChange}
+          autoSize={{minRows: 2}}
+        />
+      </Item>
+      <Button type="primary" htmlType="submit">
+        Submit
+      </Button>
+    </Form>
+  );
 }
 
 export default AddJokeForm;
