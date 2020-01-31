@@ -1,34 +1,38 @@
 import react, {useState, ChangeEvent} from 'react';
 import {Form, Input, Button} from 'antd';
 import {useMutation} from '@apollo/react-hooks';
-import gql from 'graphql-tag';
+import {CREATE_JOKE_MUTATION} from '../../../lib/mutations';
+import Message from '../../02-molecules/Message';
 
 const {Item} = Form;
 const {TextArea} = Input;
 
-const CREATE_JOKE_MUTATION = gql`
-  mutation CREATE_JOKE_MUTATION($content: String!) {
-    createJoke(content: $content) {
-      id
-    }
-  }
-`;
-
 const AddJokeForm = () => {
+  // Form values are stored in state.
   const [form, setState] = useState({content: ''});
 
-  const [addJoke, { data }] = useMutation(CREATE_JOKE_MUTATION);
+  // Mutation for adding a new joke.
+  const [createJoke, {loading, error}] = useMutation(CREATE_JOKE_MUTATION);
 
+  // Update the form state when input values change.
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const {name, value} = e.target;
     setState({...form, [name]: value});
   }
+
+  // Execute the mutation on form submission.
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    addJoke({ variables: { content: form.content } });
+    createJoke({ variables: { content: form.content } });
   }
   return (
     <Form onSubmit={handleSubmit}>
+      {error && (
+        <Message 
+          message={error.message}
+          type='error'
+        />
+      )}
       <Item 
         label="Submit a joke" 
         htmlFor="content"
