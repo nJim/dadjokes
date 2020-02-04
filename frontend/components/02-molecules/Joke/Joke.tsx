@@ -1,5 +1,6 @@
 import {Comment, Avatar} from 'antd';
 import {JokeData} from '../../../types'
+import {JokeLink} from '../../01-atoms/Link'
 import {DislikeAction, LikeAction, ShareAction} from '../../02-molecules/Action';
 
 const Joke = ({id, content}: JokeData) => {
@@ -20,7 +21,11 @@ const Joke = ({id, content}: JokeData) => {
           alt="Han Solo"
         />
       }
-      content={content}
+      content={
+        <JokeLink id={id}>
+          {content}
+        </JokeLink>
+      }
       datetime={<span>Five minutes ago.</span>}
     />
   );
