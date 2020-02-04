@@ -3,6 +3,7 @@
 type Mutation {
   createJoke(content: String!): Joke!
   updateJoke(id: ID!, content: String): Joke!
+  deleteJoke(id: ID!): Joke
 }
 
 type Query {

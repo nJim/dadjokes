@@ -4,6 +4,7 @@ import {useMutation, useQuery} from '@apollo/react-hooks';
 import {UPDATE_JOKE_MUTATION} from '../../../lib/mutations';
 import {SINGLE_JOKE_QUERY} from '../../../lib/queries';
 import Loading from '../../01-atoms/Loading';
+import {DeleteButton} from '../../01-atoms/Buttons';
 import Message from '../../02-molecules/Message';
 
 const {Item} = Form;
@@ -75,6 +76,9 @@ const UpdateJokeForm = ({id}: any) => {
       <Button type="primary" htmlType="submit">
         Save Changes
       </Button>
+      <DeleteButton id={id}>
+        Delete
+      </DeleteButton>
     </Form>
   );
 }
