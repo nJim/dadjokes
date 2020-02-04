@@ -2,12 +2,14 @@ import {Comment, Avatar} from 'antd';
 import {JokeData} from '../../../types'
 import {JokeLink} from '../../01-atoms/Link'
 import {DislikeAction, LikeAction, ShareAction} from '../Action';
+import UpdateAction from '../Action/UpdateAction';
 
 const Joke = ({id, content}: JokeData) => {
   const actions = [
     <LikeAction />,
     <DislikeAction />,
-    <ShareAction />
+    <ShareAction />,
+    <UpdateAction id={id} />
   ];
 
   return(
