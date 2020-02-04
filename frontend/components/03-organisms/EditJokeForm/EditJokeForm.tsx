@@ -11,7 +11,7 @@ const {Item} = Form;
 const {TextArea} = Input;
 
 // TODO: Add proper typing on query parameter.
-const UpdateJokeForm = ({id}: any) => {
+const EditJokeForm = ({id}: any) => {
 
   // Changed form values are stored in state.
   const [form, setFormState] = useState({});
@@ -21,7 +21,7 @@ const UpdateJokeForm = ({id}: any) => {
     variables: { id: id },
   });
 
-  const [updateJoke] = useMutation(UPDATE_JOKE_MUTATION);
+  const [editJoke] = useMutation(UPDATE_JOKE_MUTATION);
 
   // Update the form state when input values change.
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -33,7 +33,7 @@ const UpdateJokeForm = ({id}: any) => {
   // Passing the id and any changed values.
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    updateJoke({ variables: { 
+    editJoke({ variables: { 
       id: id,
       ...form 
     }});
@@ -83,4 +83,4 @@ const UpdateJokeForm = ({id}: any) => {
   );
 }
 
-export default UpdateJokeForm;
+export default EditJokeForm;

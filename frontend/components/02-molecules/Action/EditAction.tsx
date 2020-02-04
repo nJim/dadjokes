@@ -5,10 +5,10 @@ type Props = {
   id: string
 }
 
-const UpdateAction = ({id}: Props) => (
-  <Link href={{pathname: '/update', query: {id: id}}}>
+const EditAction = ({id}: Props) => (
+  <Link href={{pathname: '/edit', query: {id: id}}}>
     <a><SettingsIcon /></a>
   </Link>
 );
 
-export default UpdateAction;
+export default EditAction;
