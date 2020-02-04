@@ -1,7 +1,7 @@
 import {Comment, Avatar} from 'antd';
 import {JokeData} from '../../../types'
 import {JokeLink} from '../../01-atoms/Link'
-import {DislikeAction, LikeAction, ShareAction} from '../../02-molecules/Action';
+import {DislikeAction, LikeAction, ShareAction} from '../Action';
 
 const Joke = ({id, content}: JokeData) => {
   const actions = [

@@ -1,11 +1,11 @@
-import Joke from '../../02-molecules/Joke';
+import JokeTeaser from '../../02-molecules/JokeTeaser';
 import {JokeData, JokeListData} from '../../../types';
 
 const JokeList = ({jokes}: JokeListData) => {
   return (
     <div>
       {jokes.map((joke: JokeData) => (
-        <Joke key={joke.id} id={joke.id} content={joke.content} />
+        <JokeTeaser key={joke.id} id={joke.id} content={joke.content} />
       ))}
     </div>
   );
