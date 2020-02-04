@@ -2,8 +2,12 @@
 
 type Mutation {
   createJoke(content: String!): Joke!
+  updateJoke(id: ID!, content: String): Joke!
 }
 
 type Query {
   jokes: [Joke]!
+  joke(where: JokeWhereUniqueInput!): Joke
 }
+
+

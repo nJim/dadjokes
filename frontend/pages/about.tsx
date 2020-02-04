@@ -44,6 +44,21 @@ function AboutPage() {
       title: 'Apollo Client',
       description: 'details'
     },
+    {
+      id: 'GraphQL',
+      title: 'Apollo Client',
+      description: 'details'
+    },
+    {
+      id: 'Yoga',
+      title: 'Apollo Client',
+      description: 'details'
+    },
+    {
+      id: 'Prisma',
+      title: 'Apollo Client',
+      description: 'details'
+    }
   ];
 
   return (

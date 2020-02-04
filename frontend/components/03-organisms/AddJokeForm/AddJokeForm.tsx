@@ -4,7 +4,6 @@ import {Form, Input, Button} from 'antd';
 import {useMutation} from '@apollo/react-hooks';
 import {CREATE_JOKE_MUTATION} from '../../../lib/mutations';
 import Message from '../../02-molecules/Message';
-import { stringify } from 'querystring';
 
 const {Item} = Form;
 const {TextArea} = Input;

@@ -8,3 +8,12 @@ export const ALL_JOKES_QUERY = gql`
     }
   }
 `;
+
+export const SINGLE_JOKE_QUERY = gql`
+  query SINGLE_JOKE_QUERY($id: ID!) {
+    joke (where: { id: $id }) {
+      id
+      content
+    }
+  }
+`;
