@@ -5,7 +5,7 @@ const JokeList = ({jokes}: JokeListData) => {
   return (
     <div>
       {jokes.map((joke: JokeData) => (
-        <Joke id={joke.id} content={joke.content} />
+        <Joke key={joke.id} id={joke.id} content={joke.content} />
       ))}
     </div>
   );
