@@ -3,6 +3,7 @@ import {Form, Input, Button} from 'antd';
 import {useMutation, useQuery} from '@apollo/react-hooks';
 import {UPDATE_JOKE_MUTATION} from '../../../lib/mutations';
 import {SINGLE_JOKE_QUERY} from '../../../lib/queries';
+import Loading from '../../01-atoms/Loading';
 import Message from '../../02-molecules/Message';
 
 const {Item} = Form;
@@ -38,9 +39,7 @@ const UpdateJokeForm = ({id}: any) => {
   }
 
   // Exit early if loading.
-  if (loading) return (
-    <div>Loading...</div>
-  )
+  if (loading) return <Loading />;
 
   // Exit early if the joke can not be found by id.
   if (!data || !data.joke) return (
