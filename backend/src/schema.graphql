@@ -1,9 +1,9 @@
 # import * from './generated/prisma.graphql'
 
 type Mutation {
-  createJoke(content: String!): Joke!
-  updateJoke(id: ID!, content: String): Joke!
-  deleteJoke(id: ID!): Joke
+  createJoke(data: JokeCreateInput!): Joke!
+  updateJoke(data: JokeUpdateInput!, where: JokeWhereUniqueInput!): Joke
+  deleteJoke(where: JokeWhereUniqueInput!): Joke
 }
 
 type Query {
