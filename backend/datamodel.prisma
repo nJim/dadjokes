@@ -1,6 +1,21 @@
 type Joke {
   id: ID! @id
   content: String!
+  category: Category
+  author: User
   updatedAt: DateTime! @updatedAt
   createdAt: DateTime! @createdAt
+}
+
+type User {
+  id: ID! @id
+  name: String! @unique
+  jokes: [Joke]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Category {
+  id: ID! @id
+  name: String! @unique 
 }
