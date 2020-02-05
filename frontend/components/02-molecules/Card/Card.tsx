@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card as AntCard} from 'antd';
-import {CardData} from '../../../types';
+import {CardData} from '../../../lib/types';
 
 const { Meta } = AntCard;
 

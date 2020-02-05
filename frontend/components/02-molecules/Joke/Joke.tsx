@@ -1,5 +1,4 @@
 import {Comment, Avatar} from 'antd';
-import {JokeData} from '../../../types'
 import {JokeLink} from '../../01-atoms/Link'
 import {DislikeAction, EditAction, LikeAction, ShareAction} from '../Action';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col} from 'antd';
 import SectionHeading from '../../01-atoms/SectionHeading';
 import Card from '../../02-molecules/Card';
-import {CardData} from '../../../types';
+import {CardData} from '../../../lib/types';
 
 type Props = {
   heading?: string,

@@ -1,8 +1,7 @@
 import Joke from '../../02-molecules/Joke';
-import {JokeData, JokeListData} from '../../../types';
+import {JokeData, JokeListData} from '../../../lib/types';
 
 const JokeList = ({jokes}: JokeListData) => {
-  console.log(jokes)
   return (
     <div>
       {jokes.map((joke: JokeData) => (
