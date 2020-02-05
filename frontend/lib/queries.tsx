@@ -5,6 +5,12 @@ export const ALL_JOKES_QUERY = gql`
     jokes {
       id
       content
+      category {
+        name
+      }
+      author {
+        name
+      }
     }
   }
 `;
@@ -14,6 +20,12 @@ export const SINGLE_JOKE_QUERY = gql`
     joke (where: { id: $id }) {
       id
       content
+      category {
+        name
+      }
+      author {
+        name
+      }
     }
   }
 `;

@@ -3,7 +3,14 @@ import {JokeData} from '../../../types'
 import {JokeLink} from '../../01-atoms/Link'
 import {DislikeAction, EditAction, LikeAction, ShareAction} from '../Action';
 
-const Joke = ({id, content}: JokeData) => {
+type Props = {
+  id: string,
+  content: string,
+  category: string,
+  author: string
+}
+
+const Joke = ({id, content, category, author}: Props) => {
   const actions = [
     <LikeAction />,
     <DislikeAction />,
@@ -15,7 +22,7 @@ const Joke = ({id, content}: JokeData) => {
     <Comment
       key={id}
       actions={actions}
-      author={<a>Han Solo</a>}
+      author={category}
       avatar={
         <Avatar
           src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -27,7 +34,7 @@ const Joke = ({id, content}: JokeData) => {
           {content}
         </JokeLink>
       }
-      datetime={<span>Five minutes ago.</span>}
+      datetime={<div>Posted by {author}</div>}
     />
   );
 } 

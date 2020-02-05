@@ -24,6 +24,8 @@ function JokePage({query}: any) {
       <Joke 
         id={data.joke.id}
         content={data.joke.content} 
+        category={data.joke.category.name}
+        author={data.joke.author.name}
       />
     </div>
   );
