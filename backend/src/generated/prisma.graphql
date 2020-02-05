@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/jim-vomero-78368d/dadjokes/dev
-# timestamp: Wed Feb 05 2020 00:00:38 GMT-0500 (EST)
+# timestamp: Wed Feb 05 2020 00:48:26 GMT-0500 (EST)
 
 type AggregateCategory {
   count: Int!
@@ -113,11 +113,9 @@ input CategoryUpdateManyMutationInput {
   name: String
 }
 
-input CategoryUpdateOneInput {
+input CategoryUpdateOneRequiredInput {
   create: CategoryCreateInput
   connect: CategoryWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
   update: CategoryUpdateDataInput
   upsert: CategoryUpsertNestedInput
 }
@@ -228,8 +226,8 @@ scalar DateTime
 type Joke implements Node {
   id: ID!
   content: String!
-  category: Category
-  author: User
+  category: Category!
+  author: User!
   updatedAt: DateTime!
   createdAt: DateTime!
 }
@@ -247,8 +245,8 @@ type JokeConnection {
 input JokeCreateInput {
   id: ID
   content: String!
-  category: CategoryCreateOneInput
-  author: UserCreateOneWithoutJokesInput
+  category: CategoryCreateOneInput!
+  author: UserCreateOneWithoutJokesInput!
 }
 
 input JokeCreateManyWithoutAuthorInput {
@@ -259,7 +257,7 @@ input JokeCreateManyWithoutAuthorInput {
 input JokeCreateWithoutAuthorInput {
   id: ID
   content: String!
-  category: CategoryCreateOneInput
+  category: CategoryCreateOneInput!
 }
 
 """An edge in a connection."""
@@ -463,8 +461,8 @@ input JokeSubscriptionWhereInput {
 
 input JokeUpdateInput {
   content: String
-  category: CategoryUpdateOneInput
-  author: UserUpdateOneWithoutJokesInput
+  category: CategoryUpdateOneRequiredInput
+  author: UserUpdateOneRequiredWithoutJokesInput
 }
 
 input JokeUpdateManyDataInput {
@@ -494,7 +492,7 @@ input JokeUpdateManyWithWhereNestedInput {
 
 input JokeUpdateWithoutAuthorDataInput {
   content: String
-  category: CategoryUpdateOneInput
+  category: CategoryUpdateOneRequiredInput
 }
 
 input JokeUpdateWithWhereUniqueWithoutAuthorInput {
@@ -834,11 +832,9 @@ input UserUpdateManyMutationInput {
   name: String
 }
 
-input UserUpdateOneWithoutJokesInput {
+input UserUpdateOneRequiredWithoutJokesInput {
   create: UserCreateWithoutJokesInput
   connect: UserWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
   update: UserUpdateWithoutJokesDataInput
   upsert: UserUpsertWithoutJokesInput
 }

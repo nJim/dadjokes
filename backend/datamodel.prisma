@@ -1,8 +1,8 @@
 type Joke {
   id: ID! @id
   content: String!
-  category: Category
-  author: User
+  category: Category!
+  author: User!
   updatedAt: DateTime! @updatedAt
   createdAt: DateTime! @createdAt
 }
