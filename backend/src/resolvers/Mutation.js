@@ -3,9 +3,7 @@ const Mutations = {
     console.log(args);
     // TODO: Check if they are logged in
     const joke = await ctx.db.mutation.createJoke({
-      data: {
-        ...args
-      }
+      ...args
     }, info);
 
     return joke;
@@ -22,6 +20,7 @@ const Mutations = {
     }, info);
   },
   async deleteJoke(parents, args, ctx, info) {
+    console.log(args)
     const where = { id: args.id };
     // Find the joke with manual query.
     const item = await ctx.db.query.joke({where}, `{id content}`)

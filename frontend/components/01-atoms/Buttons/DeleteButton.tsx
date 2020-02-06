@@ -8,6 +8,7 @@ interface Props {
 }
 
 const DeleteButton: React.FC<Props> = ({id, children}) => {
+  console.log(id)
   const [deleteJoke] = useMutation(DELETE_JOKE_MUTATION, {
     variables: { id: id },
   });

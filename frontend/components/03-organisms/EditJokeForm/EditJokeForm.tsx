@@ -1,5 +1,5 @@
 import react, {useState, ChangeEvent} from 'react';
-import {Form, Input, Button} from 'antd';
+import {Form, Input, Button, Select} from 'antd';
 import {useMutation, useQuery} from '@apollo/react-hooks';
 import {UPDATE_JOKE_MUTATION} from '../../../lib/mutations';
 import {SINGLE_JOKE_QUERY} from '../../../lib/queries';
@@ -9,6 +9,7 @@ import Message from '../../02-molecules/Message';
 
 const {Item} = Form;
 const {TextArea} = Input;
+const { Option } = Select;
 
 // TODO: Add proper typing on query parameter.
 const EditJokeForm = ({id}: any) => {
@@ -73,6 +74,33 @@ const EditJokeForm = ({id}: any) => {
           autoSize={{minRows: 2}} 
         />
       </Item>
+      <Item 
+        label="Author" 
+        htmlFor="author"
+        colon={false}
+      >
+        <Select 
+          id="author" 
+          defaultValue="lucy" 
+        >
+          <Option value="jack">Jack</Option>
+          <Option value="lucy">Lucy</Option>
+        </Select>
+      </Item>
+      <Item 
+        label="Category" 
+        htmlFor="category"
+        colon={false}
+      >
+        <Select 
+          id="category" 
+          defaultValue="lucy" 
+        >
+          <Option value="jack">Jack</Option>
+          <Option value="lucy">Lucy</Option>
+        </Select>
+      </Item>
+      
       <Button type="primary" htmlType="submit">
         Save Changes
       </Button>

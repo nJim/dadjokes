@@ -2,8 +2,23 @@ import gql from 'graphql-tag';
 
 export const CREATE_JOKE_MUTATION = gql`
   mutation CREATE_JOKE_MUTATION($content: String!) {
-    createJoke(content: $content) {
+    createJoke(data: {
+      content: $content
+      category: {
+        connect: {
+          name: "One Liner"
+        }
+      }
+      author: {
+        connect: {
+          name: "ZZ"
+        }
+      }
+    }) {
       id
+      content
+      updatedAt
+      createdAt
     }
   }
 `;
