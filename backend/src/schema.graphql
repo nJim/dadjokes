@@ -9,4 +9,6 @@ type Mutation {
 type Query {
   jokes: [Joke]!
   joke(where: JokeWhereUniqueInput!): Joke
+  categories: [Category]!
+  users: [User]!
 }

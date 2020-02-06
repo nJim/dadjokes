@@ -15,6 +15,24 @@ export const ALL_JOKES_QUERY = gql`
   }
 `;
 
+export const ALL_CATEGORIES_QUERY = gql`
+  query ALL_CATEGORIES_QUERY {
+    categories {
+      id
+      name
+    }
+  }
+`;
+
+export const ALL_USERS_QUERY = gql`
+  query ALL_USERS_QUERY {
+    users {
+      id
+      name
+    }
+  }
+`;
+
 export const SINGLE_JOKE_QUERY = gql`
   query SINGLE_JOKE_QUERY($id: ID!) {
     joke (where: { id: $id }) {

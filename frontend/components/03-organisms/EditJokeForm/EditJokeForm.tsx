@@ -1,15 +1,15 @@
 import react, {useState, ChangeEvent} from 'react';
-import {Form, Input, Button, Select} from 'antd';
+import {Form, Input, Button} from 'antd';
 import {useMutation, useQuery} from '@apollo/react-hooks';
 import {UPDATE_JOKE_MUTATION} from '../../../lib/mutations';
 import {SINGLE_JOKE_QUERY} from '../../../lib/queries';
 import Loading from '../../01-atoms/Loading';
 import {DeleteButton} from '../../01-atoms/Buttons';
 import Message from '../../02-molecules/Message';
+import {SelectAuthor} from '../../02-molecules/Select';
 
 const {Item} = Form;
 const {TextArea} = Input;
-const { Option } = Select;
 
 // TODO: Add proper typing on query parameter.
 const EditJokeForm = ({id}: any) => {
@@ -17,7 +17,7 @@ const EditJokeForm = ({id}: any) => {
   // Changed form values are stored in state.
   const [form, setFormState] = useState({});
 
-  // First query the item by query parameter id.
+  // Fetch the current item by query parameter id.
   const { loading, error, data } = useQuery(SINGLE_JOKE_QUERY, {
     variables: { id: id },
   });
@@ -74,32 +74,8 @@ const EditJokeForm = ({id}: any) => {
           autoSize={{minRows: 2}} 
         />
       </Item>
-      <Item 
-        label="Author" 
-        htmlFor="author"
-        colon={false}
-      >
-        <Select 
-          id="author" 
-          defaultValue="lucy" 
-        >
-          <Option value="jack">Jack</Option>
-          <Option value="lucy">Lucy</Option>
-        </Select>
-      </Item>
-      <Item 
-        label="Category" 
-        htmlFor="category"
-        colon={false}
-      >
-        <Select 
-          id="category" 
-          defaultValue="lucy" 
-        >
-          <Option value="jack">Jack</Option>
-          <Option value="lucy">Lucy</Option>
-        </Select>
-      </Item>
+
+      <SelectAuthor />
       
       <Button type="primary" htmlType="submit">
         Save Changes
