@@ -56,8 +56,6 @@ const EditJokeForm = ({id}: any) => {
     />
   );
 
-  console.log(form);
-
   return (
     <Form onSubmit={handleSubmit}>
       {error && (

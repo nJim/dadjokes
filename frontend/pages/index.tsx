@@ -10,7 +10,6 @@ function HomePage() {
 
   return (
     <div>
-      Welcome home.
       <JokeList jokes={data.jokes}/>
     </div>
   );

@@ -1,3 +1,4 @@
+import {PageHeading} from '../components/01-atoms/Headings';
 import Cards from '../components/03-organisms/Cards';
 
 function AboutPage() {
@@ -63,7 +64,7 @@ function AboutPage() {
 
   return (
     <div>
-      <div>This is the about page.</div>
+      <PageHeading>About this Project</PageHeading>
       <Cards 
         heading={heading}
         cards={cards}
