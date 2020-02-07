@@ -6,7 +6,7 @@ import {SINGLE_JOKE_QUERY} from '../../../lib/queries';
 import Loading from '../../01-atoms/Loading';
 import {DeleteButton} from '../../01-atoms/Buttons';
 import Message from '../../02-molecules/Message';
-import {SelectAuthor} from '../../02-molecules/Select';
+import {SelectAuthor, SelectCategory} from '../../02-molecules/Select';
 
 const {Item} = Form;
 const {TextArea} = Input;
@@ -30,6 +30,11 @@ const EditJokeForm = ({id}: any) => {
     setFormState({...form, [name]: value});
   }
 
+  // Custom update function to handle values from select lists.
+  const handleSelectChange = (name: string, value: string) => {
+    setFormState({...form, [name]: value});
+  }
+
   // Execute the mutation on form submission.
   // Passing the id and any changed values.
   const handleSubmit = (e: any) => {
@@ -50,6 +55,8 @@ const EditJokeForm = ({id}: any) => {
       type='error'
     />
   );
+
+  console.log(form);
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -75,7 +82,15 @@ const EditJokeForm = ({id}: any) => {
         />
       </Item>
 
-      <SelectAuthor />
+      <SelectAuthor 
+        defaultValue={data.joke.author.name}
+        handleChange={handleSelectChange}
+      />
+
+      <SelectCategory 
+        defaultValue={data.joke.category.name}
+        handleChange={handleSelectChange}
+      />
       
       <Button type="primary" htmlType="submit">
         Save Changes
