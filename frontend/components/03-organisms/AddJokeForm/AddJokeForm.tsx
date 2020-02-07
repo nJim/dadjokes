@@ -4,6 +4,7 @@ import {Form, Input, Button} from 'antd';
 import {useMutation} from '@apollo/react-hooks';
 import {CREATE_JOKE_MUTATION} from '../../../lib/mutations';
 import Message from '../../02-molecules/Message';
+import {SelectAuthor, SelectCategory} from '../../02-molecules/Select';
 
 const {Item} = Form;
 const {TextArea} = Input;
@@ -32,6 +33,11 @@ const AddJokeForm = () => {
   // Update the form state when input values change.
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const {name, value} = e.target;
+    setFormState({...form, [name]: value});
+  }
+
+  // Custom update function to handle values from select lists.
+  const handleSelectChange = (name: string, value: string) => {
     setFormState({...form, [name]: value});
   }
 
@@ -83,6 +89,15 @@ const AddJokeForm = () => {
           autoSize={{minRows: 2}}
         />
       </Item>
+
+      <SelectAuthor 
+        handleChange={handleSelectChange}
+      />
+
+      <SelectCategory 
+        handleChange={handleSelectChange}
+      />
+
       <Button type="primary" htmlType="submit">
         Submit
       </Button>
