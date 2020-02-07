@@ -1,4 +1,4 @@
-import react, {useState, ChangeEvent} from 'react';
+import {useState, ChangeEvent} from 'react';
 import {Form, Input, Button} from 'antd';
 import {useMutation, useQuery} from '@apollo/react-hooks';
 import {UPDATE_JOKE_MUTATION} from '../../../lib/mutations';

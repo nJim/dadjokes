@@ -19,7 +19,7 @@ const Cards = ({heading, cards}: Props) => {
       )}
       <Row gutter={[16, 16]} type="flex">
         { cards.map((card: CardData) => (
-          <Col md={{span: 12}} lg={{span: 6}}>
+          <Col sm={{span: 12}} md={{span: 8}} key={card.id}>
             <Card 
               id={card.id}
               title={card.title}

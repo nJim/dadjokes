@@ -10,7 +10,7 @@ const Navigation = () => {
       theme="dark"
       mode="horizontal"
       defaultSelectedKeys={['1']}
-      style={{ lineHeight: '64px' }}
+      style={{ lineHeight: '64px', maxWidth: 900, margin: 'auto' }}
     >
       <Item key="1">
         <Link href="/">

@@ -4,12 +4,11 @@ import {CardData} from '../../../lib/types';
 
 const { Meta } = AntCard;
 
-const Card = ({id, title, description}: CardData) => {
+const Card = ({title, description}: CardData) => {
   const defaultImageAlt = "To Do"
   const defaultImageSrc = "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
   return (
     <AntCard
-      key={id}
       cover={
         <img 
           alt={defaultImageAlt} 

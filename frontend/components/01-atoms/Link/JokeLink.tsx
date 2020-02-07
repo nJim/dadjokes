@@ -6,7 +6,9 @@ interface Props {
 
 const JokeLink: React.FC<Props> = ({children, id}) => (
   <Link href={{pathname: '/joke', query: {id: id}}}>
-    <a>{children}</a>
+    <a style={{fontSize: '1.25rem'}}>
+      {children}
+    </a>
   </Link>
 );
 
