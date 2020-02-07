@@ -44,7 +44,7 @@ const AddJokeForm = () => {
   // Execute the mutation on form submission.
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    createJoke({ variables: { content: form.content } });
+    createJoke({ variables: { ...form } });
   }
 
   // Provide success message, clear form, link to joke.

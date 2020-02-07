@@ -24,6 +24,7 @@ const Select = ({id, label, options, defaultValue, loading, handleChange}: Props
       label={label}
       htmlFor={id}
       colon={false}
+      required
     >
       <SelectBox 
         id={id}
