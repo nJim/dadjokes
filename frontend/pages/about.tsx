@@ -1,76 +1,31 @@
+import styled from 'styled-components';
 import {PageHeading} from '../components/01-atoms/Headings';
 import Cards from '../components/03-organisms/Cards';
+import {aboutPageCards} from '../lib/content';
 
-function AboutPage() {
-  const heading = 'Frontend tooling used on this project';
-  // TODO: Add shape to this data in component.
-  const cards = [
-    {
-      id: 'react',
-      title: 'React',
-      description: 'JavaScript library used for building user interfaces. My components are organized using Atomic Design principals.'
-    },
-    {
-      id: 'nextjs',
-      title: 'NextJS',
-      description: 'Framework based on Vue.js, Node.js, Webpack and Babel.js. I\'m enjoying the server side rendering support.'
-    },
-    {
-      id: 'antd',
-      title: 'Ant Design',
-      description: 'React library with a deep set of components, layouts, and building tools. It\'s written in TypeScript with predictable static types.'
-    },
-    {
-      id: 'styled',
-      title: 'Styled Components',
-      description: 'Library for writting CSS-in-JS. Includes features for passing props, organizing themes, and dynamically changing elements.'
-    },
-    {
-      id: 'storybook',
-      title: 'Storybook',
-      description: 'Development tool that creates a playground for components. Includes addons for validating, testing, and interacting with components.'
-    },
-    {
-      id: 'typescript',
-      title: 'TypeScript',
-      description: 'A typed superset of JavaScript. I\'m using the strong static typing features to ensure code is easier to understand and debug.'
-    },
-    {
-      id: 'jest',
-      title: 'Jest & Enzyme',
-      description: 'details'
-    },
-    {
-      id: 'apollo',
-      title: 'Apollo Client',
-      description: 'details'
-    },
-    {
-      id: 'GraphQL',
-      title: 'Apollo Client',
-      description: 'details'
-    },
-    {
-      id: 'Yoga',
-      title: 'Apollo Client',
-      description: 'details'
-    },
-    {
-      id: 'Prisma',
-      title: 'Apollo Client',
-      description: 'details'
-    }
-  ];
+const Link = styled.a`
+  text-decoration: underline;
+  text-decoration-style: dotted;
+`;
 
-  return (
-    <div>
-      <PageHeading>About this Project</PageHeading>
-      <Cards 
-        heading={heading}
-        cards={cards}
-      />
-    </div>
-  );
-}
+const AboutPage = () => (
+  <div>
+    <PageHeading>About this Project</PageHeading>
+    <p>
+      This webapp is a sandbox for me to experiment with new 
+      technologies. It includes two projects: a frontend ReactJS 
+      app for displaying and managing content and a backend node 
+      app for interfacing with a GraphQL service. I'm also using 
+      this site as an excuse to play around new technologies for
+      proffessional development. Everything is in a public&nbsp;
+      <Link href="https://github.com/nJim/dadjokes">GitHub repo</Link>
+      &nbsp;if you want to check it out.
+    </p>
+    <Cards 
+      heading='Tooling and Packages'
+      cards={aboutPageCards}
+    />
+  </div>
+);
 
 export default AboutPage;
