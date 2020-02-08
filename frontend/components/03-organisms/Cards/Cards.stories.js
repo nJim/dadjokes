@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from '.';
+import Cards from './';
 
 export default {
   title: 'Organisms|Cards',

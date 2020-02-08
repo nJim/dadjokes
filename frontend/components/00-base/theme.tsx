@@ -8,7 +8,9 @@ export const theme = {
   lightgrey: '#E1E1E1',
   offWhite: '#EDEDED',
   maxWidth: '900px',
+  minWidth: '500px',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
+  bpMobile: '500px',
 };
 
 export const CenterLayout = styled.div`

@@ -10,6 +10,10 @@ const ContentInner = styled.div`
   margin: 24px;
   padding: 24px;
   max-width: ${props => props.theme.maxWidth};
+  min-width: 100%;
+  @media (min-width: ${props => props.theme.bpMobile}) {
+    min-width: ${props => props.theme.minWidth};
+  }
 `;
 
 class Page extends Component {
