@@ -10,7 +10,7 @@ import {UserData} from '../lib/types';
  * @returns string[]
  *   Array of names from the queried data.
  */
-const getUserNames = (users: UserData[]): string[] => 
+const getUserNames = (users: Array<UserData>): Array<string> => 
   pluck('name')(users);
 
 export default getUserNames;

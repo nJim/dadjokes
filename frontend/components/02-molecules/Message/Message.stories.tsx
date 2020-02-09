@@ -20,6 +20,7 @@ stories.add('Message', () => {
   console.log(value);
   return (
     <Message 
+      // @ts-ignore
       type={value}
       message="I can't believe rattlesnake warnings are called rattles and not cautionary tails."
     />

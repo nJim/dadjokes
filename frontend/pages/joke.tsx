@@ -1,6 +1,7 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
 import {SINGLE_JOKE_QUERY} from '../lib/queries';
+import {getJoke} from '../utility';
 import Joke from '../components/02-molecules/Joke';
 import Message from '../components/02-molecules/Message';
 
@@ -13,6 +14,9 @@ function JokePage({query}: any) {
   // Exit early if the data is still loading.
   if (loading) return 'Loading...';
 
+  // Get the joke from the response data.
+  const joke = getJoke(data);
+
   return (
     <div>
       {error && (
@@ -21,12 +25,14 @@ function JokePage({query}: any) {
           type='error'
         />
       )}
-      <Joke 
-        id={data.joke.id}
-        content={data.joke.content} 
-        category={data.joke.category.name}
-        author={data.joke.author.name}
-      />
+      {joke && (
+        <Joke 
+          id={data.joke.id}
+          content={data.joke.content} 
+          category={data.joke.category.name}
+          author={data.joke.author.name}
+        />
+      )}
     </div>
   );
 }
