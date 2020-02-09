@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './';
+import Card from '.';
 
 export default {
   title: 'Molecules|Card',
@@ -7,6 +7,7 @@ export default {
 
 export const card = () => (
   <Card 
+    id="foo"
     title="All that glitters is gold"
     description="So much to do, so much to see, so what's wrong with taking the backstreets?"
   />
